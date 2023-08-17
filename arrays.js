@@ -201,3 +201,79 @@ function inversor(array) {
 }
 console.log(peliculasAnimadas);
 console.log(inversor(peliculasAnimadas));
+
+// sumaArray()
+// En este ejercicio, deberás crear una función sumaArray() que acepte un arreglo de
+// números (3 elementos) y devuelva la suma de todos ellos. Ejemplo:
+// ● sumArray([1,2,3]) // 6
+// ● sumArray([10, 3, 10]) // 23
+// ● sumArray([-5,100, 19]) // 114
+
+function sumaArray(arrayN) {
+  if (arrayN.length == 3) {
+    if (
+      typeof arrayN[0] == "number" &&
+      typeof arrayN[1] == "number" &&
+      typeof arrayN[2] == "number"
+    ) {
+      let sumatoriaArray = 0;
+      for (let i = 0; i < arrayN.length; i++) {
+        sumatoriaArray = sumatoriaArray + arrayN[i];
+      }
+      return `La sumatoria de ${arrayN[0]} + ${arrayN[1]} + ${arrayN[2]} es :  ${sumatoriaArray}`;
+    } else {
+      return `Solo acepta un arreglo de números, verifique los tipos de datos!!`; //control de error
+    }
+  } else {
+    return `Solo acepta un arreglo de numeros de (3 elementos)!!`; //control de error
+  }
+}
+
+let array1 = [1, 2, 3]; // 6
+let array2 = [10, 3, 10]; // 23
+let array3 = [-5, 100, 19]; // 114
+let array4 = [-5, true, true]; // 114
+
+console.log(sumaArray(array1));
+console.log(sumaArray(array2));
+console.log(sumaArray(array3));
+console.log(sumaArray(array4)); //test control de error
+
+// Simulación Array.join()
+// En este ejercicio deberás crear una función llamada join() que reciba un arreglo de
+// strings de 4 elementos y simule el comportamiento del método Array.join().
+// Importante: no podés usar el método Array.join() original.
+// Ejemplo:
+// ● join(["h","o","l","a"]) debe retornar el string "hola".
+// ● join(["c","h","a,"u"]) debe retornar el string "chau".
+
+function join(array4Elements) {
+  if (array4Elements.length == 4) {
+    if (
+      typeof array4Elements[0] == "string" &&
+      typeof array4Elements[1] == "string" &&
+      typeof array4Elements[2] == "string" &&
+      typeof array4Elements[3] == "string"
+    ) {
+      let addString = "";
+      for (let i = 0; i < array4Elements.length; i++) {
+        addString += array4Elements[i];
+      }
+      return addString;
+    } else {
+      return `Solo se recibe un arreglo de strings!!`; //control de error
+    }
+  } else {
+    return `Solo se recibe un arreglo de 4 elementos!!`; //control de error
+  }
+}
+
+let array4Elements1 = ["h", "o", "l", "a"];
+let array4Elements2 = ["c", "h", "a", "u"];
+let array4Elements3 = ["c", "h", "a", "u", "l"];
+let array4Elements4 = ["c", "h", "a", 1];
+
+console.log(join(array4Elements1));
+console.log(join(array4Elements2));
+console.log(join(array4Elements3)); //test control de error
+console.log(join(array4Elements4)); //test control de error
